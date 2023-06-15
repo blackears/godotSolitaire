@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dq3gsdmixtk3k"]
+
+[ext_resource type="Texture2D" uid="uid://bchkxskbqfhot" path="res://art/svg_playing_cards/fronts/spades_ace.svg" id="1_7nkfd"]
+[ext_resource type="Script" path="res://script/card.gd" id="2_d1lq2"]
+
+[resource]
+script = ExtResource("2_d1lq2")
+suit = 0
+rank = 0
+image = ExtResource("1_7nkfd")

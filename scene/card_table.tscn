@@ -1,0 +1,131 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbb4b24fuhn15"]
+
+[ext_resource type="Script" path="res://scene/card_table.gd" id="1_cql10"]
+[ext_resource type="PackedScene" uid="uid://66a2202477b" path="res://scene/card_stack_body.tscn" id="4_o8if7"]
+[ext_resource type="Resource" uid="uid://c2vjhv4l6b6o3" path="res://data/card_spade_2.tres" id="5_pl8to"]
+[ext_resource type="Resource" uid="uid://bu55vqqix4ydj" path="res://data/card_spade_5.tres" id="6_m71m2"]
+[ext_resource type="Resource" uid="uid://cmapbdr2gdaf4" path="res://data/card_spade_7.tres" id="7_3uni3"]
+[ext_resource type="Resource" uid="uid://tolmyjrr0mm1" path="res://data/card_spade_10.tres" id="8_hnptx"]
+[ext_resource type="PackedScene" uid="uid://d1d4l0eprcsbl" path="res://scene/goal_stack_body.tscn" id="8_n4dn6"]
+[ext_resource type="PackedScene" uid="uid://d37cpxb31c1c5" path="res://scene/column_down_stack.tscn" id="9_1iim2"]
+[ext_resource type="Resource" uid="uid://cy1aig6x1hml2" path="res://data/card_club_8.tres" id="9_xh8ta"]
+[ext_resource type="Resource" uid="uid://cotsjc1t7j035" path="res://data/card_heart_5.tres" id="10_inf8w"]
+[ext_resource type="Resource" uid="uid://c6f0xhlk8dd7e" path="res://data/card_heart_6.tres" id="11_s6dvj"]
+[ext_resource type="PackedScene" uid="uid://bxbktlaabn2ty" path="res://scene/column_up_stack.tscn" id="12_ovnlp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cql10")
+
+[node name="draw_pile" parent="." instance=ExtResource("4_o8if7")]
+position = Vector2(30, 205)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("5_pl8to"), ExtResource("6_m71m2"), ExtResource("7_3uni3"), ExtResource("8_hnptx")])
+card_offset = Vector2(1, 0)
+face_up = false
+
+[node name="hand" parent="." instance=ExtResource("4_o8if7")]
+position = Vector2(144, 207)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("5_pl8to"), ExtResource("6_m71m2"), ExtResource("7_3uni3"), ExtResource("8_hnptx")])
+card_offset = Vector2(10, 0)
+
+[node name="discard_pile" parent="." instance=ExtResource("4_o8if7")]
+position = Vector2(302, 211)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("5_pl8to"), ExtResource("6_m71m2"), ExtResource("7_3uni3"), ExtResource("8_hnptx")])
+card_offset = Vector2(1, 0)
+
+[node name="goal_0" parent="." instance=ExtResource("8_n4dn6")]
+position = Vector2(525, 63)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+
+[node name="goal_1" parent="." instance=ExtResource("8_n4dn6")]
+position = Vector2(606, 65)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+
+[node name="goal_2" parent="." instance=ExtResource("8_n4dn6")]
+position = Vector2(692, 68)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+
+[node name="goal_3" parent="." instance=ExtResource("8_n4dn6")]
+position = Vector2(784, 67)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+
+[node name="col_down_0" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(525, 191)
+up_stack = NodePath("../col_up_0")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_0" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(526, 200)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_down_1" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(619, 193)
+up_stack = NodePath("../col_up_1")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_1" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(620, 202)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_down_2" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(700, 192)
+up_stack = NodePath("../col_up_2")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_2" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(701, 201)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_down_3" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(785, 193)
+up_stack = NodePath("../col_up_3")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_3" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(786, 202)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_down_4" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(871, 192)
+up_stack = NodePath("../col_up_4")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_4" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(872, 201)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_down_5" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(958, 193)
+up_stack = NodePath("../col_up_5")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_5" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(959, 202)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_down_6" parent="." instance=ExtResource("9_1iim2")]
+position = Vector2(1050, 199)
+up_stack = NodePath("../col_up_6")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="col_up_6" parent="." instance=ExtResource("12_ovnlp")]
+position = Vector2(1051, 208)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("10_inf8w"), ExtResource("11_s6dvj")])
+
+[node name="drag_column" parent="." instance=ExtResource("4_o8if7")]
+position = Vector2(143, 394)
+cards = Array[Resource("res://script/card.gd")]([ExtResource("5_pl8to"), ExtResource("6_m71m2"), ExtResource("7_3uni3"), ExtResource("8_hnptx")])
+card_offset = Vector2(0, 10)
+pickable = false
+
+[node name="bn_new_game" type="Button" parent="."]
+offset_left = 51.0
+offset_top = 58.0
+offset_right = 144.0
+offset_bottom = 89.0
+text = "New Game"
+
+[connection signal="drag_started" from="draw_pile" to="." method="_on_draw_pile_drag_started"]
+[connection signal="selected" from="draw_pile" to="." method="_on_draw_pile_selected"]
+[connection signal="drag_started" from="hand" to="." method="_on_hand_drag_started"]
+[connection signal="selected" from="hand" to="." method="_on_hand_selected"]
+[connection signal="pressed" from="bn_new_game" to="." method="_on_bn_new_game_pressed"]

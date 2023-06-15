@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d37cpxb31c1c5"]
+
+[ext_resource type="PackedScene" uid="uid://66a2202477b" path="res://scene/card_stack_body.tscn" id="1_d6k1i"]
+[ext_resource type="Script" path="res://scene/column_down_stack.gd" id="2_o65ql"]
+
+[node name="column_down_stack" instance=ExtResource("1_d6k1i")]
+script = ExtResource("2_o65ql")
+up_stack = null
+card_offset = Vector2(0, 2)
+face_up = false
+
+[connection signal="drag_started" from="." to="." method="_on_drag_started"]
+[connection signal="selected" from="." to="." method="_on_selected"]

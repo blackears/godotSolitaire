@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxbktlaabn2ty"]
+
+[ext_resource type="PackedScene" uid="uid://66a2202477b" path="res://scene/card_stack_body.tscn" id="1_ucyip"]
+[ext_resource type="Script" path="res://scene/column_up_stack.gd" id="2_qqox4"]
+
+[node name="column_up" instance=ExtResource("1_ucyip")]
+script = ExtResource("2_qqox4")
+card_offset = Vector2(0, 16)
+
+[node name="pick_rect" parent="." index="0"]
+pickable = false
+
+[connection signal="drag_started" from="." to="." method="_on_drag_started"]

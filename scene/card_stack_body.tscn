@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://66a2202477b"]
+
+[ext_resource type="Script" path="res://scene/card_stack_body.gd" id="1_3xdmp"]
+[ext_resource type="Resource" uid="uid://bmr7hpifflpy3" path="res://data/card_spade_6.tres" id="2_41dld"]
+[ext_resource type="Texture2D" uid="uid://cbn2ai0cyr36c" path="res://art/svg_playing_cards/backs/blue2.svg" id="2_ei53y"]
+[ext_resource type="PackedScene" uid="uid://bj2qrie1ep0a7" path="res://scene/pick_rect.tscn" id="3_t20og"]
+
+[node name="card_stack_body" type="Node2D"]
+script = ExtResource("1_3xdmp")
+cards = Array[Resource("res://script/card.gd")]([ExtResource("2_41dld")])
+card_back = ExtResource("2_ei53y")
+
+[node name="pick_rect" parent="." instance=ExtResource("3_t20og")]
+color = Color(0.823529, 0.94902, 0, 0.403922)
+
+[node name="cards" type="Node2D" parent="."]

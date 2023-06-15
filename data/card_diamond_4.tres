@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://decv3cl75v3ua"]
+
+[ext_resource type="Texture2D" uid="uid://nw3007ek104j" path="res://art/svg_playing_cards/fronts/diamonds_4.svg" id="1_h3kfj"]
+[ext_resource type="Script" path="res://script/card.gd" id="2_467cs"]
+
+[resource]
+script = ExtResource("2_467cs")
+suit = 2
+rank = 3
+image = ExtResource("1_h3kfj")

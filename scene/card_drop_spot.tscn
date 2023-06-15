@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://by6km1jdma1av"]
+
+[ext_resource type="Script" path="res://scene/card_drop_spot.gd" id="1_1ive4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy6en"]
+size = Vector2(148, 198)
+
+[node name="card_drop_spot" type="Node2D"]
+script = ExtResource("1_1ive4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vy6en")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
