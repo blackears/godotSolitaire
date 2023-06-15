@@ -31,6 +31,7 @@ card_offset = Vector2(10, 0)
 position = Vector2(302, 211)
 cards = Array[Resource("res://script/card.gd")]([ExtResource("5_pl8to"), ExtResource("6_m71m2"), ExtResource("7_3uni3"), ExtResource("8_hnptx")])
 card_offset = Vector2(1, 0)
+face_up = false
 
 [node name="goal_0" parent="." instance=ExtResource("8_n4dn6")]
 position = Vector2(525, 63)

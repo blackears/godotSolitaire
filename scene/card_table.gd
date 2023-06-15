@@ -34,15 +34,7 @@ var chosen_card_stack:CardStackBody
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$draw_pile.selected.connect()
 	
-#	$col_down_0.up_stack = $col_up_0.get_path()
-#	$col_down_1.up_stack = $col_up_1.get_path()
-#	$col_down_2.up_stack = $col_up_2.get_path()
-#	$col_down_3.up_stack = $col_up_3.get_path()
-#	$col_down_4.up_stack = $col_up_4.get_path()
-#	$col_down_5.up_stack = $col_up_5.get_path()
-#	$col_down_6.up_stack = $col_up_6.get_path()
 	
 	#print("rank: %s" % rank)
 	pass # Replace with function body.
@@ -273,12 +265,17 @@ func _on_bn_new_game_pressed():
 	var local_deck:CardStack = deck.duplicate()
 	local_deck.shuffle()
 	
-	$col_down_0.cards = local_deck.draw_cards(1)
-	$col_down_1.cards = local_deck.draw_cards(2)
-	$col_down_2.cards = local_deck.draw_cards(3)
-	$col_down_3.cards = local_deck.draw_cards(4)
-	$col_down_4.cards = local_deck.draw_cards(5)
-	$col_down_5.cards = local_deck.draw_cards(6)
+	print("--dealing")
+
+	print("deck init %s" % str(local_deck.cards))
+	
+	$col_down_0.cards = local_deck.draw_cards(0)
+	$col_down_1.cards = local_deck.draw_cards(1)
+	$col_down_2.cards = local_deck.draw_cards(2)
+	$col_down_3.cards = local_deck.draw_cards(3)
+	$col_down_4.cards = local_deck.draw_cards(4)
+	$col_down_5.cards = local_deck.draw_cards(5)
+	$col_down_6.cards = local_deck.draw_cards(6)
 	
 	$col_up_0.cards = local_deck.draw_cards(1)
 	$col_up_1.cards = local_deck.draw_cards(1)
@@ -287,6 +284,23 @@ func _on_bn_new_game_pressed():
 	$col_up_4.cards = local_deck.draw_cards(1)
 	$col_up_5.cards = local_deck.draw_cards(1)
 	$col_up_6.cards = local_deck.draw_cards(1)
+
+	print("$col_down_0.cards %s" % str($col_down_0.cards))
+	print("$col_down_1.cards %s" % str($col_down_1.cards))
+	print("$col_down_2.cards %s" % str($col_down_2.cards))
+	print("$col_down_3.cards %s" % str($col_down_3.cards))
+	print("$col_down_4.cards %s" % str($col_down_4.cards))
+	print("$col_down_5.cards %s" % str($col_down_5.cards))
+	print("$col_down_6.cards %s" % str($col_down_6.cards))
+
+	print("$col_up_0.cards %s" % str($col_up_0.cards))
+	print("$col_up_1.cards %s" % str($col_up_1.cards))
+	print("$col_up_2.cards %s" % str($col_up_2.cards))
+	print("$col_up_3.cards %s" % str($col_up_3.cards))
+	print("$col_up_4.cards %s" % str($col_up_4.cards))
+	print("$col_up_5.cards %s" % str($col_up_5.cards))
+	print("$col_up_6.cards %s" % str($col_up_6.cards))
+	print("deck %s" % str(local_deck.cards))
 	
 	var e:Array[Card] = []
 	$goal_0.cards = e.duplicate()
@@ -299,4 +313,3 @@ func _on_bn_new_game_pressed():
 	
 	$draw_pile.cards = local_deck.cards
 	
-	pass
