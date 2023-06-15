@@ -28,22 +28,28 @@ class_name ColumnDownStack
 
 @export var up_stack:NodePath
 
-func _can_drop(cards:Array[Card])->bool:
+func _can_drop(drop_cards:Array[Card])->bool:
+	var up_stack_local:CardStackBody = get_node(up_stack)
+	
+	if !up_stack_local.cards.is_empty():
+		return false
+	
 	if !cards.is_empty():
 		return false
 	
-	if cards[0].rank == Card.Rank.KING:
+	if drop_cards[0].rank == Card.Rank.KING:
 		return true
 	
 	return false
 	
 
 func _drop(drop_stack:CardStackBody):
+	var up_stack_local:CardStackBody = get_node(up_stack)
 	var card_stack:Array[Card] = drop_stack.cards
 	
 	var e:Array[Card] = []
 	drop_stack.cards = e
-	cards = card_stack
+	up_stack_local.cards = card_stack
 	
 	
 	
@@ -52,13 +58,13 @@ func _on_selected(card_idx):
 	if cards.is_empty():
 		return
 	
-	var up_stack:CardStackBody = get_node(up_stack)
+	var up_stack_local:CardStackBody = get_node(up_stack)
 	
-	if up_stack.cards.is_empty():
+	if up_stack_local.cards.is_empty():
 		var cur_stack:Array[Card] = cards
 		
 		var new_card = cur_stack.pop_back()
-		up_stack.cards = [new_card]
+		up_stack_local.cards = [new_card]
 		cards = cur_stack
 		
 

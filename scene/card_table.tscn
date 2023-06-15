@@ -35,18 +35,22 @@ card_offset = Vector2(1, 0)
 [node name="goal_0" parent="." instance=ExtResource("8_n4dn6")]
 position = Vector2(525, 63)
 cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+card_offset = Vector2(0, 1)
 
 [node name="goal_1" parent="." instance=ExtResource("8_n4dn6")]
 position = Vector2(606, 65)
 cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+card_offset = Vector2(0, 1)
 
 [node name="goal_2" parent="." instance=ExtResource("8_n4dn6")]
 position = Vector2(692, 68)
 cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+card_offset = Vector2(0, 1)
 
 [node name="goal_3" parent="." instance=ExtResource("8_n4dn6")]
 position = Vector2(784, 67)
 cards = Array[Resource("res://script/card.gd")]([ExtResource("9_xh8ta")])
+card_offset = Vector2(0, 1)
 
 [node name="col_down_0" parent="." instance=ExtResource("9_1iim2")]
 position = Vector2(525, 191)
@@ -123,6 +127,9 @@ offset_top = 58.0
 offset_right = 144.0
 offset_bottom = 89.0
 text = "New Game"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(581, 324)
 
 [connection signal="drag_started" from="draw_pile" to="." method="_on_draw_pile_drag_started"]
 [connection signal="selected" from="draw_pile" to="." method="_on_draw_pile_selected"]

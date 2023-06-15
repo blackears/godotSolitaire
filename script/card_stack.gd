@@ -36,6 +36,9 @@ func shuffle():
 		new_cards.append(cards[idx])
 		cards.remove_at(idx)
 	
+	#print("--shuffle")
+#	for c in new_cards:
+#		print("c %s" % str(c))
 	cards = new_cards
 	
 func draw_cards(num_cards:int)->Array[Card]:

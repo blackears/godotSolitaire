@@ -5,7 +5,7 @@
 
 [node name="column_down_stack" instance=ExtResource("1_d6k1i")]
 script = ExtResource("2_o65ql")
-up_stack = null
+up_stack = NodePath("")
 card_offset = Vector2(0, 2)
 face_up = false
 

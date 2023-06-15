@@ -36,6 +36,14 @@ var chosen_card_stack:CardStackBody
 func _ready():
 	#$draw_pile.selected.connect()
 	
+#	$col_down_0.up_stack = $col_up_0.get_path()
+#	$col_down_1.up_stack = $col_up_1.get_path()
+#	$col_down_2.up_stack = $col_up_2.get_path()
+#	$col_down_3.up_stack = $col_up_3.get_path()
+#	$col_down_4.up_stack = $col_up_4.get_path()
+#	$col_down_5.up_stack = $col_up_5.get_path()
+#	$col_down_6.up_stack = $col_up_6.get_path()
+	
 	#print("rank: %s" % rank)
 	pass # Replace with function body.
 
